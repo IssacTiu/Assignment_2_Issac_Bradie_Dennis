@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ggjca808trlf"]
+
+[ext_resource type="Script" uid="uid://djcelttj5sv0d" path="res://camera.gd" id="1_u5kg4"]
+
+[node name="Camera" type="Node3D" unique_id=1529064965]
+script = ExtResource("1_u5kg4")
+
+[node name="Pivot" type="Node3D" parent="." unique_id=1275259974]
+unique_name_in_owner = true
+transform = Transform3D(0.7071067, -0.4999999, 0.4999999, 0, 0.7071067, 0.7071067, -0.7071067, -0.4999999, 0.4999999, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=397174305]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 2.8832018)
+projection = 1
+fov = 100.0
+size = 3.0
