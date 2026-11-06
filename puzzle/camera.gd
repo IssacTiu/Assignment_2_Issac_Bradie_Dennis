@@ -2,13 +2,14 @@ extends Node3D
 
 @export var rotate_delay = 0.1
 @export var position_delay = 5.0
-@export var zoom = 8.0
+@export var set_zoom = 8.0
+
 @onready var target = Node3D.new()
 
 func _ready() -> void:
 	target.rotation.x = deg_to_rad(-45)
 	target.rotation.y = deg_to_rad(45)
-	_set_camera(0, 0, zoom)
+	_set_camera(0, 0, 1.5, set_zoom)
 
 func _physics_process(delta: float) -> void:
 	
@@ -17,26 +18,15 @@ func _physics_process(delta: float) -> void:
 		target.rotate_y(deg_to_rad(-90))
 	if Input.is_action_just_pressed("rotate_right"):
 		target.rotate_y(deg_to_rad(90))
-		
-	if Input.is_action_just_pressed("move_up"):
-		target.position.x -= 10
-	if Input.is_action_just_pressed("move_down"):
-		target.position.x += 10
-		
-	if Input.is_action_just_pressed("zoom_in"):
-		$Pivot/ZoomPoint.position.z += 4
-		print($Pivot/ZoomPoint.position.z)
-	if Input.is_action_just_pressed("zoom_out"):
-		$Pivot/ZoomPoint.position.z -= 4
-		print($Pivot/ZoomPoint.position.z)
 	
 	_rotate_camera()
 	_move_camera(delta)
 	_zoom_camera(delta)
 	
-func _set_camera(x: float, y: float, size: float):
+func _set_camera(x: float, y: float, height: float, size: float):
 	target.position.x = x
 	target.position.z = y
+	target.position.y = height
 	$Pivot/ZoomPoint.position.z = size
 
 #Interpolates camera rotation

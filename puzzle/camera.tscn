@@ -10,10 +10,10 @@ unique_name_in_owner = true
 transform = Transform3D(0.7071067, -0.4999999, 0.4999999, 0, 0.7071067, 0.7071067, -0.7071067, -0.4999999, 0.4999999, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=397174305]
-transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 3)
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 8)
 projection = 1
 fov = 100.0
-size = 3.0
+size = 8.0
 
 [node name="ZoomPoint" type="Node3D" parent="Pivot" unique_id=1340221309]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)

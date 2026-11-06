@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cp315iu0g8qb8"]
+
+[ext_resource type="Script" uid="uid://cm87gmddq6qo0" path="res://level.gd" id="1_0b4ue"]
+[ext_resource type="PackedScene" uid="uid://ggjca808trlf" path="res://camera.tscn" id="1_vonw3"]
+[ext_resource type="PackedScene" uid="uid://bs5rv4t33r8jy" path="res://room.tscn" id="2_oi3di"]
+[ext_resource type="PackedScene" uid="uid://d3jj3cq71535q" path="res://door.tscn" id="4_f2txt"]
+[ext_resource type="PackedScene" uid="uid://4m5lkt60rear" path="res://interactable.tscn" id="5_f2txt"]
+
+[node name="Level" type="Node" unique_id=794416274]
+script = ExtResource("1_0b4ue")
+
+[node name="Camera" parent="." unique_id=1529064965 instance=ExtResource("1_vonw3")]
+unique_name_in_owner = true
+
+[node name="Room2" parent="." unique_id=1962482790 instance=ExtResource("2_oi3di")]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 3, -8)
+
+[node name="Door" parent="Room2" unique_id=384805128 instance=ExtResource("4_f2txt")]
+transform = Transform3D(1, 0, 2.842171e-14, 0, 1, 0, -2.842171e-14, 0, 1, -7.1549266e-08, 1, -3)
+
+[node name="Room1" parent="." unique_id=1295871121 instance=ExtResource("2_oi3di")]
+unique_name_in_owner = true
+
+[node name="Door" parent="Room1" unique_id=2094539453 instance=ExtResource("4_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3)
+next_room = Vector2(0, -8)
+
+[node name="Interactable" parent="Room1" unique_id=687976286 instance=ExtResource("5_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.430381, 1, 0)
+facing_required = true
+
+[connection signal="moved" from="Room2/Door" to="." method="_on_door_moved"]
+[connection signal="moved" from="Room1/Door" to="." method="_on_door_moved"]
