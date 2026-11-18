@@ -12,7 +12,6 @@ func _ready() -> void:
 	_set_camera(0, 0, 1.5, set_zoom)
 
 func _physics_process(delta: float) -> void:
-	
 	#Camera Controls
 	if Input.is_action_just_pressed("rotate_left"):
 		target.rotate_y(deg_to_rad(-90))

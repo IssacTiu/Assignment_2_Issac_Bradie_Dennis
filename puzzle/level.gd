@@ -7,7 +7,6 @@ var current_room = Vector2.ZERO
 func _ready() -> void:
 	_enable_buttons()
 
-
 func _on_door_moved(x: Variant, y: Variant) -> void:
 	var h = rooms[Vector2(x,y)].position.y + (rooms[Vector2(x,y)].dimensions.y/2)
 	print(h)
@@ -18,10 +17,10 @@ func _on_door_moved(x: Variant, y: Variant) -> void:
 func _enable_buttons() -> void:
 	for room in rooms.values():
 		for children in room.get_children():
-			if "disable" in children:
+			if "enabled" in children:
 				if children.current_position == current_room:
 					room._show()
-					children.disable = false
+					children.enabled = true
 				else:
 					room._hide()
-					children.disable = true
+					children.enabled = false
