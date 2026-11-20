@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cp315iu0g8qb8"]
 
-[ext_resource type="Script" uid="uid://cm87gmddq6qo0" path="res://level.gd" id="1_0b4ue"]
+[ext_resource type="Script" uid="uid://cm87gmddq6qo0" path="res://levels/level.gd" id="1_0b4ue"]
 [ext_resource type="PackedScene" uid="uid://ggjca808trlf" path="res://camera.tscn" id="1_vonw3"]
-[ext_resource type="PackedScene" uid="uid://bs5rv4t33r8jy" path="res://room.tscn" id="2_oi3di"]
-[ext_resource type="PackedScene" uid="uid://d3jj3cq71535q" path="res://door.tscn" id="4_f2txt"]
-[ext_resource type="PackedScene" uid="uid://4m5lkt60rear" path="res://interactable.tscn" id="5_f2txt"]
+[ext_resource type="PackedScene" uid="uid://bs5rv4t33r8jy" path="res://levels/room.tscn" id="2_oi3di"]
+[ext_resource type="PackedScene" uid="uid://d3jj3cq71535q" path="res://levels/door.tscn" id="4_f2txt"]
+[ext_resource type="PackedScene" uid="uid://4m5lkt60rear" path="res://interactables/interactable.tscn" id="5_f2txt"]
 
 [node name="Level" type="Node" unique_id=794416274]
 script = ExtResource("1_0b4ue")

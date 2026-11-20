@@ -12,44 +12,36 @@ func _ready() -> void:
 	_set_camera(0, 0, 1.5, set_zoom)
 
 func _physics_process(delta: float) -> void:
-	#Camera Controls
 	if Input.is_action_just_pressed("rotate_left"):
 		target.rotate_y(deg_to_rad(-90))
 	if Input.is_action_just_pressed("rotate_right"):
 		target.rotate_y(deg_to_rad(90))
-	
 	_rotate_camera()
 	_move_camera(delta)
 	_zoom_camera(delta)
-	
+
 func _set_camera(x: float, y: float, height: float, size: float):
 	target.position.x = x
 	target.position.z = y
 	target.position.y = height
 	$Pivot/ZoomPoint.position.z = size
 
-#Interpolates camera rotation
 func _rotate_camera() -> void:
-	#Camera Rotation Interpolation
 	var toTargetRotation = target.rotation - $Pivot.rotation
 	if toTargetRotation != Vector3.ZERO:
 		var q  = Quaternion($Pivot.transform.basis)
 		var tq = Quaternion(target.basis)
-		# Interpolate using spherical-linear interpolation (SLERP).
 		$Pivot.transform.basis = Basis(q.slerp(tq, rotate_delay))
 	else:
 		target.rotation = $Pivot.rotation
 
-#Interpolates camera position
 func _move_camera(delta: float) -> void:
-	#Camera Position Interpolation
 	var toTargetPosition = target.position - $Pivot.position
 	if toTargetPosition != Vector3.ZERO:
 		$Pivot.position = $Pivot.position.lerp(target.position, position_delay * delta)
 	else:
 		target.position = $Pivot.position
 
-#Interpolates camera zoom
 func _zoom_camera(delta: float) -> void:
 	var toTargetZoom = $Pivot/ZoomPoint.position - $Pivot/Camera3D.position
 	if toTargetZoom != Vector3.ZERO:
