@@ -15,7 +15,6 @@ unique_name_in_owner = true
 [node name="Room2" parent="." unique_id=1962482790 instance=ExtResource("2_oi3di")]
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 3, -8)
-visible = false
 
 [node name="Door" parent="Room2" unique_id=384805128 instance=ExtResource("4_f2txt")]
 transform = Transform3D(1, 0, 2.842171e-14, 0, 1, 0, -2.842171e-14, 0, 1, -7.1549266e-08, 1, -3)
