@@ -8,15 +8,14 @@
 [node name="Interactable" type="Node3D" unique_id=687976286]
 script = ExtResource("1_15vrf")
 
-[node name="Pivot" type="Control" parent="." unique_id=1406652341]
+[node name="InputPivot" type="Control" parent="." unique_id=1406652341]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="ClickArea" type="TextureButton" parent="Pivot" unique_id=628618493]
-modulate = Color(1, 1, 1, 0.5882353)
+[node name="ClickArea" type="TextureButton" parent="InputPivot" unique_id=628618493]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -27,7 +26,6 @@ offset_right = 64.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.75, 0.75)
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_fkvvg")
 texture_pressed = ExtResource("3_d0780")
@@ -38,7 +36,4 @@ stretch_mode = 3
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
-[node name="Object" type="Node3D" parent="." unique_id=431206934]
-unique_name_in_owner = true
-
-[connection signal="pressed" from="Pivot/ClickArea" to="." method="_on_click_area_pressed"]
+[connection signal="pressed" from="InputPivot/ClickArea" to="." method="_on_click_area_pressed"]

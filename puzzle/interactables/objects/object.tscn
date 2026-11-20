@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dbi16kbxebhra"]
+
+[ext_resource type="Script" uid="uid://initca2og2it" path="res://interactables/objects/object.gd" id="1_vl46r"]
+
+[node name="Object" type="Node3D" unique_id=418325466]
+script = ExtResource("1_vl46r")
+
+[node name="InputTarget" type="Node3D" parent="." unique_id=1962130368]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31639296, 0.6946479, 0)
