@@ -3,14 +3,18 @@
 [ext_resource type="Script" uid="uid://cm87gmddq6qo0" path="res://level.gd" id="1_0b4ue"]
 [ext_resource type="PackedScene" uid="uid://ggjca808trlf" path="res://camera.tscn" id="1_vonw3"]
 [ext_resource type="PackedScene" uid="uid://bs5rv4t33r8jy" path="res://room.tscn" id="2_oi3di"]
+[ext_resource type="PackedScene" uid="uid://cn1hfr36k7bf3" path="res://effects/cel_shading.tscn" id="3_1ainy"]
 [ext_resource type="PackedScene" uid="uid://d3jj3cq71535q" path="res://door.tscn" id="4_f2txt"]
 [ext_resource type="PackedScene" uid="uid://4m5lkt60rear" path="res://interactable.tscn" id="5_f2txt"]
+[ext_resource type="PackedScene" uid="uid://dsb7p18m8by0p" path="res://model assets/Sculpture.glb" id="6_n6hdu"]
 
 [node name="Level" type="Node" unique_id=794416274]
 script = ExtResource("1_0b4ue")
 
 [node name="Camera" parent="." unique_id=1529064965 instance=ExtResource("1_vonw3")]
 unique_name_in_owner = true
+
+[node name="ColorRect" parent="Camera" unique_id=1208404622 instance=ExtResource("3_1ainy")]
 
 [node name="Room2" parent="." unique_id=1962482790 instance=ExtResource("2_oi3di")]
 unique_name_in_owner = true
@@ -21,6 +25,10 @@ transform = Transform3D(1, 0, 2.842171e-14, 0, 1, 0, -2.842171e-14, 0, 1, -7.154
 
 [node name="Room1" parent="." unique_id=1295871121 instance=ExtResource("2_oi3di")]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0036730766, 0.012071848, -0.00035369396)
+
+[node name="Sculpture" parent="Room1" unique_id=4190575 instance=ExtResource("6_n6hdu")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.7772089, 0)
 
 [node name="Door" parent="Room1" unique_id=2094539453 instance=ExtResource("4_f2txt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3)
