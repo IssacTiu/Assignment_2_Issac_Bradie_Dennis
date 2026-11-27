@@ -24,7 +24,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3)
 next_room = Vector2(0, -8)
 
 [node name="FrameInteractable" parent="Room1" unique_id=687976286 instance=ExtResource("4_wgn3s")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.9851902, 1.6536977, -1.5010333)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.9851902, 1.6536977, -1.366014)
+
+[node name="FrameInteractable2" parent="Room1" unique_id=1020937832 instance=ExtResource("4_wgn3s")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.9851902, 1.6536977, 1.3769574)
+
+[node name="FrameInteractable3" parent="Room1" unique_id=919397621 instance=ExtResource("4_wgn3s")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.4869707, 1.6536977, 2.970569)
+
+[node name="FrameInteractable4" parent="Room1" unique_id=760674319 instance=ExtResource("4_wgn3s")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.4870224, 1.6536977, 2.970569)
 
 [connection signal="moved" from="Room2/Door" to="." method="_on_door_moved"]
 [connection signal="moved" from="Room1/Door" to="." method="_on_door_moved"]

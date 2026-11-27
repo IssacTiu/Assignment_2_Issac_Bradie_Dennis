@@ -13,7 +13,7 @@ func _physics_process(_delta: float) -> void:
 		facing = facing_normal.dot(get_viewport().get_camera_3d().project_ray_normal($InputPivot.global_position)) < 0
 	else:
 		facing = true
-	if facing:
+	if facing and Camera.is_following():
 		_show_click_area()
 	else:
 		_hide_click_area()

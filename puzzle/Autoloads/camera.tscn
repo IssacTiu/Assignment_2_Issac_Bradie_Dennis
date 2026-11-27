@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ggjca808trlf"]
 
-[ext_resource type="Script" uid="uid://djcelttj5sv0d" path="res://Autoloads/camera.gd" id="1_u5kg4"]
+[ext_resource type="Script" uid="uid://bxphp1a8wscu2" path="res://Autoloads/camera.gd" id="1_y2scp"]
 
 [node name="Camera" type="Node3D" unique_id=1529064965]
-script = ExtResource("1_u5kg4")
+script = ExtResource("1_y2scp")
 
 [node name="Pivot" type="Node3D" parent="." unique_id=1275259974]
 unique_name_in_owner = true
