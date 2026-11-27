@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://pgy84lt0s8wp"]
+
+[ext_resource type="PackedScene" uid="uid://4m5lkt60rear" path="res://interactables/interactable.tscn" id="1_tekuk"]
+[ext_resource type="PackedScene" uid="uid://dufsj7eme80j4" path="res://interactables/objects/frame_object.tscn" id="2_dfjmj"]
+
+[node name="FrameInteractable" unique_id=687976286 node_paths=PackedStringArray("object") instance=ExtResource("1_tekuk")]
+facing_required = true
+object = NodePath("FrameObject")
+
+[node name="FrameObject" parent="." index="2" unique_id=418325466 instance=ExtResource("2_dfjmj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)

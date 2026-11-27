@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cp315iu0g8qb8"]
+
+[ext_resource type="Script" uid="uid://cm87gmddq6qo0" path="res://levels/complete_levels/level.gd" id="1_wdx0r"]
+[ext_resource type="PackedScene" uid="uid://bs5rv4t33r8jy" path="res://levels/level_building/room.tscn" id="2_yhyjs"]
+[ext_resource type="PackedScene" uid="uid://d3jj3cq71535q" path="res://levels/level_building/door.tscn" id="3_abhh5"]
+[ext_resource type="PackedScene" uid="uid://pgy84lt0s8wp" path="res://interactables/frame_interactable.tscn" id="4_wgn3s"]
+
+[node name="Level" type="Node" unique_id=794416274]
+script = ExtResource("1_wdx0r")
+
+[node name="Room2" parent="." unique_id=1962482790 instance=ExtResource("2_yhyjs")]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 3, -8)
+
+[node name="Door" parent="Room2" unique_id=384805128 instance=ExtResource("3_abhh5")]
+transform = Transform3D(1, 0, 2.842171e-14, 0, 1, 0, -2.842171e-14, 0, 1, -7.1549266e-08, 1, -3)
+
+[node name="Room1" parent="." unique_id=1295871121 instance=ExtResource("2_yhyjs")]
+unique_name_in_owner = true
+level_start = true
+
+[node name="Door" parent="Room1" unique_id=2094539453 instance=ExtResource("3_abhh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3)
+next_room = Vector2(0, -8)
+
+[node name="FrameInteractable" parent="Room1" unique_id=687976286 instance=ExtResource("4_wgn3s")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.9851902, 1.6536977, -1.366014)
+
+[node name="FrameInteractable2" parent="Room1" unique_id=1020937832 instance=ExtResource("4_wgn3s")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.9851902, 1.6536977, 1.3769574)
+
+[node name="FrameInteractable3" parent="Room1" unique_id=919397621 instance=ExtResource("4_wgn3s")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.4869707, 1.6536977, 2.970569)
+
+[node name="FrameInteractable4" parent="Room1" unique_id=760674319 instance=ExtResource("4_wgn3s")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.4870224, 1.6536977, 2.970569)
+
+[connection signal="moved" from="Room2/Door" to="." method="_on_door_moved"]
+[connection signal="moved" from="Room1/Door" to="." method="_on_door_moved"]

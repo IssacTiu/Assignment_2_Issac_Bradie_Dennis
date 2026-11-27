@@ -6,7 +6,7 @@ extends Node3D
 #Coordinates of the door's room
 var current_position: Vector2
 
-var click_range = Vector2.ZERO		#Area that can be clicked
+var click_range = Vector2.ZERO #Area that can be clicked
 @onready var facing_normal = global_position.direction_to($FacingNormal.global_position)
 
 var facing: bool
@@ -19,7 +19,6 @@ func _ready() -> void:
 	click_range = $Pivot/ClickArea.size/2
 	current_position.x = self.get_parent_node_3d().position.x
 	current_position.y = self.get_parent_node_3d().position.z
-
 
 func _physics_process(delta: float) -> void:
 	if disable:
@@ -43,7 +42,6 @@ func _input(event: InputEvent) -> void:
 			if event.is_pressed() and abs(event.position - $Pivot.position).x < click_range.x and abs(event.position - $Pivot.position).y < click_range.y:
 				if not locked:
 					moved.emit(next_room.x, next_room.y)
-
 
 func unlock() -> void:
 	locked = false

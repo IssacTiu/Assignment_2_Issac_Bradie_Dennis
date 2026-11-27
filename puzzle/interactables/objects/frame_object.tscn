@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dufsj7eme80j4"]
+
+[ext_resource type="PackedScene" uid="uid://dbi16kbxebhra" path="res://interactables/objects/object.tscn" id="1_5kjdl"]
+[ext_resource type="PackedScene" uid="uid://cyav7ma8b1rr6" path="res://model assets/Frame.glb" id="1_pblo4"]
+[ext_resource type="Texture2D" uid="uid://deint3ctmvvqb" path="res://icon.svg" id="2_5kjdl"]
+[ext_resource type="Script" uid="uid://wf3ruddhttae" path="res://interactables/objects/frame_object.gd" id="2_7e1wg"]
+
+[node name="FrameObject" unique_id=418325466 instance=ExtResource("1_5kjdl")]
+script = ExtResource("2_7e1wg")
+
+[node name="InputTarget" parent="." index="0" unique_id=1962130368]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 1, 0)
+
+[node name="Frame" parent="." index="1" unique_id=2021278275 instance=ExtResource("1_pblo4")]
+
+[node name="Sprite3D" type="Sprite3D" parent="Frame" index="1" unique_id=2060619960]
+transform = Transform3D(-6.491141e-08, 0, 1, 0, 1, 0, -1.485, 0, -4.371139e-08, 0.03323871, 0, 0)
+texture = ExtResource("2_5kjdl")
+
+[node name="CamTarget" parent="." index="2" unique_id=514245999]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2, 0, 0)
